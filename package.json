@@ -1,0 +1,38 @@
+{
+	"name": "am-landing",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"watch": "npm run dev-watch && npm run wp",
+		"dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"dev-watch": "npm run dev -- --watch",
+		"watch-prod": "npm run prod -- --watch",
+		"prod": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"zip": "npm run prod && dir-archiver --src . --dest ./am-landing.zip --exclude .DS_Store mix-manifest.json .git .gitattributes .github .gitignore phpcs.xml README.md composer.json composer.lock node_modules package-lock.json package.json webpack.mix.js src yarn.lock",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/hsntareq/am-landing.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/hsntareq/am-landing/issues"
+	},
+	"homepage": "https://github.com/hsntareq/am-landing#readme",
+	"devDependencies": {
+		"cross-env": "^7.0.3",
+		"dir-archiver": "^2.1.0",
+		"laravel-mix": "^6.0.49",
+		"resolve-url-loader": "^5.0.0",
+		"sass": "^1.56.0",
+		"sass-loader": "13.1.0"
+	},
+	"dependencies": {
+		"google-fonts": "^1.0.0",
+		"laravel-mix": "^6.0.49"
+	}
+}

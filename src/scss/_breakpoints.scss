@@ -1,0 +1,116 @@
+@mixin featured-area-border($item) {
+	@if $item ==3 {
+		&>.featured-item:nth-child(1) {
+			border-left: none;
+			border-top: none;
+			padding-inline-start: 0;
+			padding-block-start: 0;
+		}
+
+		&>.featured-item:nth-child(2) {
+			border-top: none;
+			padding-block-start: 0;
+		}
+
+		&>.featured-item:nth-child(3) {
+			border-right: none;
+			border-top: none;
+			padding-block-start: 0;
+			padding-inline-end: 0;
+		}
+
+		&>.featured-item:nth-child(4) {
+			border-left: none;
+			border-bottom: none;
+			padding-inline-start: 0;
+			padding-block-end: 0;
+		}
+
+		&>.featured-item:nth-child(5) {
+			border-bottom: none;
+			padding-block-end: 0;
+		}
+
+		&>.featured-item:nth-child(6) {
+			border-right: none;
+			border-bottom: none;
+			padding-block-end: 0;
+			padding-inline-end: 0;
+		}
+	}
+
+	@if $item ==2 {
+		&>.featured-item:nth-child(1) {
+			border-left: none;
+			border-top: none;
+			padding-block-start: 0;
+			padding-inline-start: 0;
+		}
+
+		&>.featured-item:nth-child(2) {
+			border-right: none;
+			border-top: none;
+			padding-block-start: 0;
+		}
+
+		&>.featured-item:nth-child(3) {
+			border-left: none;
+			border-bottom: none;
+			padding-inline-start: 0;
+		}
+
+		&>.featured-item:nth-child(4) {
+			border-right: none;
+			border-bottom: none;
+			padding-inline-end: 0;
+		}
+
+		&>.featured-item:nth-child(5) {
+			border-bottom: none;
+			border-left: none;
+			padding-block-end: 0;
+			padding-inline-start: 0;
+		}
+
+		&>.featured-item:nth-child(6) {
+			border-right: none;
+			border-bottom: none;
+			padding-inline-end: 0;
+			padding-block-end: 0;
+		}
+	}
+
+	@if $item ==1 {
+		&>.featured-item:nth-child(1) {
+			border-left: none;
+			border-top: none;
+			border-right: none;
+		}
+
+		&>.featured-item:nth-child(2) {
+			border-right: none;
+			border-left: none;
+		}
+
+		&>.featured-item:nth-child(3) {
+			border-right: none;
+			border-left: none;
+		}
+
+		&>.featured-item:nth-child(4) {
+			border-right: none;
+			border-left: none;
+		}
+
+		&>.featured-item:nth-child(5) {
+			border-right: none;
+			border-left: none;
+		}
+
+		&>.featured-item:nth-child(6) {
+			border-right: none;
+			border-left: none;
+			border-bottom: none;
+		}
+	}
+}
