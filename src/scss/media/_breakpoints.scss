@@ -1,0 +1,92 @@
+// Media Query Mixins
+$breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px,
+);
+
+// @include breakpoint-min(lg) { ... }
+@mixin breakpoint-min($size) {
+	@if $size == sm {
+		@media (min-width: map-get($map: $breakpoints, $key: 'sm')) {
+			@content;
+		}
+	} @else if $size == md {
+		@media (min-width: map-get($map: $breakpoints, $key: 'md')) {
+			@content;
+		}
+	} @else if $size == lg {
+		@media (min-width: map-get($map: $breakpoints, $key: 'lg')) {
+			@content;
+		}
+	} @else if $size == xl {
+		@media (min-width: map-get($map: $breakpoints, $key: 'xl')) {
+			@content;
+		}
+	} @else if $size == xxl {
+		@media (min-width: map-get($map: $breakpoints, $key: 'xxl')) {
+			@content;
+		}
+	} @else {
+		@media (min-width: #{$size}px) {
+			@content;
+		}
+	}
+}
+
+// @include breakpoint-max(md) { ... }
+@mixin breakpoint-max($size) {
+	@if $size == sm {
+		@media (max-width: (map-get($map: $breakpoints, $key: 'sm') - 0.02)) {
+			@content;
+		}
+	} @else if $size == md {
+		@media (max-width: (map-get($map: $breakpoints, $key: 'md') - 0.02)) {
+			@content;
+		}
+	} @else if $size == lg {
+		@media (max-width: (map-get($map: $breakpoints, $key: 'lg') - 0.02)) {
+			@content;
+		}
+	} @else if $size == xl {
+		@media (max-width: (map-get($map: $breakpoints, $key: 'xl') - 0.02)) {
+			@content;
+		}
+	} @else if $size == xxl {
+		@media (max-width: (map-get($map: $breakpoints, $key: 'xxl') - 0.02)) {
+			@content;
+		}
+	} @else {
+		@media (max-width: #{$size}px) {
+			@content;
+		}
+	}
+}
+
+// @include breakpoint-minmax(md, lg) { ... }
+@mixin breakpoint-minmax($sizemin, $sizemax) {
+	@if ($sizemin == 'sm' and $sizemax == 'md') {
+		@media (min-width: map-get($map: $breakpoints, $key: 'sm')) and (max-width: (map-get($map: $breakpoints, $key: 'md') - 0.02)) {
+			@content;
+		}
+	} @else if ($sizemin == 'md' and $sizemax == 'lg') {
+		@media (min-width: map-get($map: $breakpoints, $key: 'md')) and (max-width: (map-get($map: $breakpoints, $key: 'lg') - 0.02)) {
+			@content;
+		}
+	} @else if ($sizemin == 'lg' and $sizemax == 'xl') {
+		@media (min-width: map-get($map: $breakpoints, $key: 'lg')) and (max-width: (map-get($map: $breakpoints, $key: 'xl') - 0.02)) {
+			@content;
+		}
+	} @else if ($sizemin == 'xl' and $sizemax == 'xxl') {
+		@media (min-width: map-get($map: $breakpoints, $key: 'xl')) and (max-width: (map-get($map: $breakpoints, $key: 'xxl') - 0.02)) {
+			@content;
+		}
+	} @else {
+		@media (min-width: #{$sizemin}px) and (max-width: #{$sizemax}px) {
+			@content;
+		}
+	}
+}

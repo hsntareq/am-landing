@@ -4,8 +4,9 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"watch": "npm run dev-watch && npm run wp",
+		"both-watch": "npm run dev-watch && npm run wp",
 		"dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"watch": "npm run dev -- --watch",
 		"dev-watch": "npm run dev -- --watch",
 		"watch-prod": "npm run prod -- --watch",
 		"prod": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --config=node_modules/laravel-mix/setup/webpack.config.js",
