@@ -1,116 +1,92 @@
-@mixin featured-area-border($item) {
-	@if $item ==3 {
-		&>.featured-item:nth-child(1) {
-			border-left: none;
-			border-top: none;
-			padding-inline-start: 0;
-			padding-block-start: 0;
-		}
+// Media Query Mixins
+$breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px,
+);
 
-		&>.featured-item:nth-child(2) {
-			border-top: none;
-			padding-block-start: 0;
+// @include breakpoint-min(lg) { ... }
+@mixin breakpoint-min($size) {
+	@if $size == sm {
+		@media (min-width: map-get($map: $breakpoints, $key: 'sm')) {
+			@content;
 		}
-
-		&>.featured-item:nth-child(3) {
-			border-right: none;
-			border-top: none;
-			padding-block-start: 0;
-			padding-inline-end: 0;
+	} @else if $size == md {
+		@media (min-width: map-get($map: $breakpoints, $key: 'md')) {
+			@content;
 		}
-
-		&>.featured-item:nth-child(4) {
-			border-left: none;
-			border-bottom: none;
-			padding-inline-start: 0;
-			padding-block-end: 0;
+	} @else if $size == lg {
+		@media (min-width: map-get($map: $breakpoints, $key: 'lg')) {
+			@content;
 		}
-
-		&>.featured-item:nth-child(5) {
-			border-bottom: none;
-			padding-block-end: 0;
+	} @else if $size == xl {
+		@media (min-width: map-get($map: $breakpoints, $key: 'xl')) {
+			@content;
 		}
-
-		&>.featured-item:nth-child(6) {
-			border-right: none;
-			border-bottom: none;
-			padding-block-end: 0;
-			padding-inline-end: 0;
+	} @else if $size == xxl {
+		@media (min-width: map-get($map: $breakpoints, $key: 'xxl')) {
+			@content;
+		}
+	} @else {
+		@media (min-width: #{$size}px) {
+			@content;
 		}
 	}
+}
 
-	@if $item ==2 {
-		&>.featured-item:nth-child(1) {
-			border-left: none;
-			border-top: none;
-			padding-block-start: 0;
-			padding-inline-start: 0;
+// @include breakpoint-max(md) { ... }
+@mixin breakpoint-max($size) {
+	@if $size == sm {
+		@media (max-width: (map-get($map: $breakpoints, $key: 'sm') - 0.02)) {
+			@content;
 		}
-
-		&>.featured-item:nth-child(2) {
-			border-right: none;
-			border-top: none;
-			padding-block-start: 0;
+	} @else if $size == md {
+		@media (max-width: (map-get($map: $breakpoints, $key: 'md') - 0.02)) {
+			@content;
 		}
-
-		&>.featured-item:nth-child(3) {
-			border-left: none;
-			border-bottom: none;
-			padding-inline-start: 0;
+	} @else if $size == lg {
+		@media (max-width: (map-get($map: $breakpoints, $key: 'lg') - 0.02)) {
+			@content;
 		}
-
-		&>.featured-item:nth-child(4) {
-			border-right: none;
-			border-bottom: none;
-			padding-inline-end: 0;
+	} @else if $size == xl {
+		@media (max-width: (map-get($map: $breakpoints, $key: 'xl') - 0.02)) {
+			@content;
 		}
-
-		&>.featured-item:nth-child(5) {
-			border-bottom: none;
-			border-left: none;
-			padding-block-end: 0;
-			padding-inline-start: 0;
+	} @else if $size == xxl {
+		@media (max-width: (map-get($map: $breakpoints, $key: 'xxl') - 0.02)) {
+			@content;
 		}
-
-		&>.featured-item:nth-child(6) {
-			border-right: none;
-			border-bottom: none;
-			padding-inline-end: 0;
-			padding-block-end: 0;
+	} @else {
+		@media (max-width: #{$size}px) {
+			@content;
 		}
 	}
+}
 
-	@if $item ==1 {
-		&>.featured-item:nth-child(1) {
-			border-left: none;
-			border-top: none;
-			border-right: none;
+// @include breakpoint-minmax(md, lg) { ... }
+@mixin breakpoint-minmax($sizemin, $sizemax) {
+	@if ($sizemin == 'sm' and $sizemax == 'md') {
+		@media (min-width: map-get($map: $breakpoints, $key: 'sm')) and (max-width: (map-get($map: $breakpoints, $key: 'md') - 0.02)) {
+			@content;
 		}
-
-		&>.featured-item:nth-child(2) {
-			border-right: none;
-			border-left: none;
+	} @else if ($sizemin == 'md' and $sizemax == 'lg') {
+		@media (min-width: map-get($map: $breakpoints, $key: 'md')) and (max-width: (map-get($map: $breakpoints, $key: 'lg') - 0.02)) {
+			@content;
 		}
-
-		&>.featured-item:nth-child(3) {
-			border-right: none;
-			border-left: none;
+	} @else if ($sizemin == 'lg' and $sizemax == 'xl') {
+		@media (min-width: map-get($map: $breakpoints, $key: 'lg')) and (max-width: (map-get($map: $breakpoints, $key: 'xl') - 0.02)) {
+			@content;
 		}
-
-		&>.featured-item:nth-child(4) {
-			border-right: none;
-			border-left: none;
+	} @else if ($sizemin == 'xl' and $sizemax == 'xxl') {
+		@media (min-width: map-get($map: $breakpoints, $key: 'xl')) and (max-width: (map-get($map: $breakpoints, $key: 'xxl') - 0.02)) {
+			@content;
 		}
-
-		&>.featured-item:nth-child(5) {
-			border-right: none;
-			border-left: none;
-		}
-
-		&>.featured-item:nth-child(6) {
-			border-right: none;
-			border-left: none;
-			border-bottom: none;
+	} @else {
+		@media (min-width: #{$sizemin}px) and (max-width: #{$sizemax}px) {
+			@content;
 		}
 	}
 }

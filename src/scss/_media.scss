@@ -1,0 +1,8 @@
+@include breakpoint-max(991) {
+	@include featured-area-border(2);
+}
+
+@include breakpoint-max(767) {
+	@import './min767';
+	
+}
