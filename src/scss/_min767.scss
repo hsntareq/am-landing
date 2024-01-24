@@ -22,6 +22,26 @@
 	margin-top: 10px;
 }
 
+.container {
+	max-width: 600px;
+}
+
+.simple-screenshots {
+	.screenshots {
+		flex-direction: column;
+
+		>* {
+			width: 100%;
+
+			img {
+				border-radius: 6px;
+				box-shadow: 0 0 20px 0 rgba(0, 0, 0, .2);
+			}
+		}
+	}
+}
+
+
 .featured-area,
 .testimonials {
 	padding-block: 50px;
@@ -34,6 +54,7 @@
 		gap: 20px;
 	}
 }
+
 .v-space-100,
 .pt-100 {
 	padding-top: 40px;
@@ -42,7 +63,8 @@
 .hero-screenshot-content {
 	flex-direction: column;
 	text-align: center;
-	.hero-screenshot-img{
+
+	.hero-screenshot-img {
 		order: 1;
 	}
 
