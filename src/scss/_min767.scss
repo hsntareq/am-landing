@@ -1,0 +1,52 @@
+.buttons {
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+
+}
+
+.btn {
+	padding: 16px 20px;
+	border-radius: 5px;
+	font-size: 16px;
+	line-height: 1;
+
+}
+
+@include featured-area-border(1);
+
+.video-thumbnail .video-thumbnail-content .video-thumbnail-text p {
+	padding-inline: 0;
+	font-size: 20px;
+	margin-top: 10px;
+}
+
+.featured-area,
+.testimonials {
+	padding-block: 50px;
+
+}
+
+.testimonials {
+	.testimonials-content {
+		flex-direction: column;
+		gap: 20px;
+	}
+}
+.v-space-100,
+.pt-100 {
+	padding-top: 40px;
+}
+
+.hero-screenshot-content {
+	flex-direction: column;
+	text-align: center;
+	.hero-screenshot-img{
+		order: 1;
+	}
+
+	&>div {
+		width: 100%;
+	}
+}

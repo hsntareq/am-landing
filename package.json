@@ -4,10 +4,9 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"both-watch": "npm run dev-watch && npm run wp",
+		"watch": "npm run dev-watch",
 		"dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --config=node_modules/laravel-mix/setup/webpack.config.js",
-		"watch": "npm run dev -- --watch",
-		"dev-watch": "npm run dev -- --watch",
+		"dev-watch": "npm run dev -- --watch --stats-children",
 		"watch-prod": "npm run prod -- --watch",
 		"prod": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --config=node_modules/laravel-mix/setup/webpack.config.js",
 		"zip": "npm run prod && dir-archiver --src . --dest ./am-landing.zip --exclude .DS_Store mix-manifest.json .git .gitattributes .github .gitignore phpcs.xml README.md composer.json composer.lock node_modules package-lock.json package.json webpack.mix.js src yarn.lock",
