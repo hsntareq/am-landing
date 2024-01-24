@@ -11,12 +11,14 @@ document.querySelector('[data-modal]').addEventListener('click', (e) => {
 
 	setTimeout(() => {
 		document.querySelector('.modal-wrap').classList.add('showvideo');
+		document.body.style.overflow = 'hidden';
 	}, 10);
 
 	document.querySelector('.modal-close, .modal-wrap').addEventListener('click', () => {
 		document.querySelector('.modal-wrap').classList.remove('showvideo');
 		setTimeout(() => {
 			document.querySelector('.modal-wrap').remove();
+			document.body.style.overflow = 'auto';
 		}, 100);
 	});
 });
