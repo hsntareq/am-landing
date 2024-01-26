@@ -1,0 +1,5 @@
+section {
+	&:not(.secondary-features) {
+		@include featured-area-border(1);
+	}
+}

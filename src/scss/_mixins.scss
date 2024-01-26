@@ -45,6 +45,8 @@
 		.features-content {
 			&>.featured-item{
 				width: 49.5%;
+				padding-block: 30px;
+				padding-inline: 26px;
 			}
 
 			&>.featured-item:nth-child(1) {
@@ -58,6 +60,7 @@
 				border-right: none;
 				border-top: none;
 				padding-block-start: 0;
+				padding-inline-end: 0;
 			}
 
 			&>.featured-item:nth-child(3) {
