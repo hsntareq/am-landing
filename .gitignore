@@ -12,6 +12,7 @@ mix-manifest.json
 # ignore vendor
 vendor
 build
+am-landing/
 
 # ignore log files and databases
 *-lock.json
